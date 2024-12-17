@@ -1,6 +1,6 @@
 package com.blockken.ecom.shared.authentication.domain;
 
-import fr.codecake.ecom.shared.error.domain.Assert;
+import com.blockken.ecom.shared.error.domain.Assert;
 
 import java.util.Map;
 import java.util.function.Function;

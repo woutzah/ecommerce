@@ -1,8 +1,7 @@
 package com.blockken.ecom.shared.authentication.domain;
 
 
-
-import fr.codecake.ecom.shared.error.domain.Assert;
+import com.blockken.ecom.shared.error.domain.Assert;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Optional;

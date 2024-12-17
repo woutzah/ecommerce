@@ -19,6 +19,7 @@
   <properties>
     <java.version>21</java.version>
   </properties>
+
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -56,6 +57,12 @@
       <artifactId>spring-boot-docker-compose</artifactId>
       <scope>runtime</scope>
       <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>cc.jilt</groupId>
+      <artifactId>jilt</artifactId>
+      <version>1.6.1</version>
+      <scope>provided</scope> <!-- Jilt is not needed at runtime -->
     </dependency>
   </dependencies>
 

@@ -1,7 +1,7 @@
 package com.blockken.ecom.order.domain.user.repository;
 
 import com.blockken.ecom.order.domain.user.aggregate.User;
-import com.blockken.ecom.order.domain.user.vo.UserAddress;
+import com.blockken.ecom.order.domain.user.vo.UserAddressToUpdate;
 import com.blockken.ecom.order.domain.user.vo.UserEmail;
 import com.blockken.ecom.order.domain.user.vo.UserPublicId;
 
@@ -15,8 +15,5 @@ public interface UserRepository {
 
   Optional<User> getOneByEmail(UserEmail userEmail);
 
-  void updateAddress(UserPublicId userPublicId, UserAddress userAddress);
-
-
-
+  void updateAddress(UserPublicId userPublicId, UserAddressToUpdate userAddressToUpdate);
 }

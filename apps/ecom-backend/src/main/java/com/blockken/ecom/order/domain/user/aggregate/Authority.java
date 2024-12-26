@@ -7,10 +7,14 @@ import org.jilt.Builder;
 @Builder
 public class Authority {
 
-  private AuthorityName authorityName;
+  private AuthorityName name;
 
-  public Authority(AuthorityName authorityName) {
-    Assert.notNull("authorityName", authorityName);
-    this.authorityName = authorityName;
+  public Authority(AuthorityName name) {
+    Assert.notNull("name", name);
+    this.name = name;
+  }
+
+  public AuthorityName getName() {
+    return name;
   }
 }

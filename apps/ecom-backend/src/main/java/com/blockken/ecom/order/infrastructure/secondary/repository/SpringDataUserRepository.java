@@ -21,30 +21,36 @@ public class SpringDataUserRepository implements UserRepository {
 
   @Override
   public void save(User user) {
-    if (user.getEmail() != null) {
+    if (user.getDbId() != null) {
       Optional<UserEntity> userToUpdateOpt = jpaUserRepository.findById(user.getDbId());
-
       if (userToUpdateOpt.isPresent()) {
         UserEntity userToUpdate = userToUpdateOpt.get();
-
         userToUpdate.updateFromUser(user);
-        jpaUserRepository.save(userToUpdate);
+        jpaUserRepository.saveAndFlush(userToUpdate);
       }
+    } else {
+      jpaUserRepository.save(UserEntity.from(user));
     }
   }
 
   @Override
   public Optional<User> getByPublicId(UserPublicId userPublicId) {
-    return Optional.empty();
+    return jpaUserRepository.findOneByPublicId(userPublicId.value())
+      .map(UserEntity::toDomain);
   }
 
   @Override
   public Optional<User> getOneByEmail(UserEmail userEmail) {
-    return Optional.empty();
+    return jpaUserRepository.findByEmail(userEmail.value())
+      .map(UserEntity::toDomain);
   }
 
   @Override
   public void updateAddress(UserPublicId userPublicId, UserAddressToUpdate userAddressToUpdate) {
-
+    jpaUserRepository.updateAddress(userPublicId.value(),
+      userAddressToUpdate.userAddress().street(),
+      userAddressToUpdate.userAddress().city(),
+      userAddressToUpdate.userAddress().country(),
+      userAddressToUpdate.userAddress().zipCode());
   }
 }

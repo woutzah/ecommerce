@@ -2,7 +2,7 @@ logging:
   level:
     ROOT: INFO
     org.hibernate.SQL: INFO
-    fr.codecake.ecom: INFO
+    com.blockken.ecom: INFO
 
 spring:
   application:
@@ -77,10 +77,10 @@ application:
     allow-credentials: false
     max-age: 300
   kinde:
-    api: https://codecake.kinde.com
+    api: https://blockkensolutions.kinde.com
     client-id: ${KINDE_CLIENT_ID}
     client-secret: ${KINDE_CLIENT_SECRET}
-    audience: https://codecake.kinde.com/api
+    audience: https://blockkensolutions.kinde.com/api
   stripe:
     api-key: ${STRIPE_API_KEY}
     webhook-secret: ${STRIPE_WEBHOOK_SECRET}

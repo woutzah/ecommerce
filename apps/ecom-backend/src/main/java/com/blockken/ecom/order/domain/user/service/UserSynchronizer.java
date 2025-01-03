@@ -2,7 +2,6 @@ package com.blockken.ecom.order.domain.user.service;
 
 import com.blockken.ecom.order.domain.user.aggregate.User;
 import com.blockken.ecom.order.domain.user.repository.UserRepository;
-import com.blockken.ecom.order.domain.user.vo.UserAddress;
 import com.blockken.ecom.order.domain.user.vo.UserAddressToUpdate;
 import com.blockken.ecom.order.infrastructure.secondary.service.kinde.KindeService;
 import com.blockken.ecom.shared.authentication.application.AuthenticatedUser;

@@ -8,12 +8,16 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/ecom-frontend",
         "index": "apps/ecom-frontend/src/index.html",
         "browser": "apps/ecom-frontend/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/ecom-frontend/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
@@ -22,7 +26,9 @@
             "input": "apps/ecom-frontend/public"
           }
         ],
-        "styles": ["apps/ecom-frontend/src/styles.scss"],
+        "styles": [
+          "apps/ecom-frontend/src/styles.scss"
+        ],
         "scripts": [],
         "server": "apps/ecom-frontend/src/main.server.ts",
         "prerender": true,
@@ -44,12 +50,24 @@
               "maximumError": "4kb"
             }
           ],
-          "outputHashing": "all"
+          "outputHashing": "all",
+          "fileReplacements": [
+            {
+              "replace": "apps/ecom-frontend/src/environments/environment.ts",
+              "with": "apps/ecom-frontend/src/environments/environment.development.ts"
+            }
+          ]
         },
         "development": {
           "optimization": false,
           "extractLicenses": false,
-          "sourceMap": true
+          "sourceMap": true,
+          "fileReplacements": [
+            {
+              "replace": "apps/ecom-frontend/src/environments/environment.ts",
+              "with": "apps/ecom-frontend/src/environments/environment.development.ts"
+            }
+          ]
         }
       },
       "defaultConfiguration": "production"
@@ -77,7 +95,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/ecom-frontend/jest.config.ts"
       }

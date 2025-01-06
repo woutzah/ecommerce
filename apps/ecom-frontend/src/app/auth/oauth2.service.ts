@@ -16,7 +16,7 @@ export class Oauth2Service {
   http = inject(HttpClient);
   oidcSecurityService = inject(OidcSecurityService);
   connectedUserQuery: CreateQueryResult<ConnectedUser> | undefined;
-  notConnected = 'NOT_CONNECTED';
+  NOT_CONNECTED = 'NOT_CONNECTED';
 
   fetch(): CreateQueryResult<ConnectedUser> {
     return injectQuery(() => ({
